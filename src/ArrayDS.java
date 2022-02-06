@@ -34,9 +34,10 @@ class Result {
 
 public class ArrayDS {
     public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        List<Integer> linhas = new ArrayList<>();
-        List<Integer> colunas = new ArrayList<>
+        List<List<Integer>> arr = new ArrayList<>();
 
         IntStream.range(0, 6).forEach(i -> {
             try {
