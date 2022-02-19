@@ -1,7 +1,5 @@
 // { Driver Code Starts
 import java.io.*;
-import java.lang.*;
-
 
 class Array {
 
@@ -36,7 +34,7 @@ class Solution {
     // arr: input array
     // n: size of array
     // Function to find the trapped water between the blocks.
-    static long trappingWater(int arr[], int n) {
+    long trappingWater(int arr[], int n) {
         int menor = 0;
         if (arr[n-1] > arr[0]) {
             menor = arr[0];
