@@ -1,9 +1,4 @@
-// { Driver Code Starts
-//Initial template code for JAVA
-
 import java.util.*;
-import java.io.*;
-import java.lang.*;
 
 class Node
 {
@@ -30,32 +25,33 @@ class GFG
     }
     
     public static void main (String[] args){
-        Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-        
-        while(t--> 0)
-        {
-            int n = sc.nextInt();
+        try (Scanner sc = new Scanner(System.in)) {
+            int t = sc.nextInt();
             
-            int num = sc.nextInt();
-            Node head = new Node(num);
-            Node tail = head;
-            
-            for(int i=0; i<n-1; i++)
+            while(t--> 0)
             {
-                num = sc.nextInt();
-                tail.next = new Node(num);
-                tail = tail.next;
+                int n = sc.nextInt();
+                
+                int num = sc.nextInt();
+                Node head = new Node(num);
+                Node tail = head;
+                
+                for(int i=0; i<n-1; i++)
+                {
+                    num = sc.nextInt();
+                    tail.next = new Node(num);
+                    tail = tail.next;
+                }
+                
+                int pos = sc.nextInt();
+                makeLoop(head, tail, pos);
+                
+                LinkedListLoop x = new LinkedListLoop();
+                if( LinkedListLoop.detectLoop(head) )
+                    System.out.println("True");
+                else
+                    System.out.println("False");
             }
-            
-            int pos = sc.nextInt();
-            makeLoop(head, tail, pos);
-            
-            Solution x = new Solution();
-            if( x.detectLoop(head) )
-                System.out.println("True");
-            else
-                System.out.println("False");
         }
     }
 }
